@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,9 @@ public class MainController {
     public String home(Model model) {
         System.out.println(hello);
         System.out.println(evn.getProperty("my.key"));
-        model.addAttribute("msg", "Hello Day La Lam");
+
+        String s = "Hello Day La Lam";
+        model.addAttribute("msg", s);
         return "index";
     }
 }
