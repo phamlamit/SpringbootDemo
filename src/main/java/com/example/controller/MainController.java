@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,6 +27,8 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
+        Integer x = null;
+        x +=10;
         employees.addAll(Arrays.asList(new Employee(1, "A", 50),
                 new Employee(2, "B", 23), new Employee(4, "D", 45),
                 new Employee(3, "C", 34), new Employee(5, "E", 21)));
@@ -57,9 +58,9 @@ public class MainController {
             response.setContentType("image/jpg");
             response.addHeader("Content-Disposition", "attachment;filename=anh.jpg");
             try {
-                Files.copy(file,response.getOutputStream());
+                Files.copy(file, response.getOutputStream());
                 response.getOutputStream().flush();
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
