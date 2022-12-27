@@ -5,7 +5,17 @@
     <title>Person</title>
 </head>
 <body>
-<p th:text="${p.id}"></p>
-<p th:text="${p.name}"></p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each="p : ${p}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.age}"></td>
+    </tr>
+</table>
 </body>
 </html>
